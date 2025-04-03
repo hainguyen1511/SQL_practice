@@ -12,12 +12,12 @@ Practice run queries
 
 ![Image](https://github.com/user-attachments/assets/6dea619c-2b45-4e52-8d34-2dba1ea5e466)
 
-I want to contact our most important customers and thank them for their business and ask how we can strengthen our relationship. I want to see a list of each customer and how much each customer has ordered.
+* I want to contact our most important customers and thank them for their business and ask how we can strengthen our relationship. I want to see a list of each customer and how much each customer has ordered.
 > `SELECT c.cust_name,SUM(oi.value) AS cust_value FROM normalization_activity.customers c JOIN normalization_activity.orders o ON c.cust_id = o.cust_id JOIN normalization_activity.order_items oi ON o.order_id = oi.order_id GROUP BY c.cust_name ORDER BY cust_value DESC;`
 
 ![3](https://github.com/user-attachments/assets/54397ed8-aaa5-41ff-a57a-247031ff299d)
 
-Some items are more important to be sure we have enough in inventory. I want to see what items have the greatest value, how many are ordered, how many times they are ordered, and what is the value of that item.
-SELECT i.item_id, i.item_desc, SUM(oi.item_quant) AS units_ordered, SUM(oi.value) AS value, COUNT(oi.order_id) AS times_ordered FROM normalization_activity.items i JOIN normalization_activity.order_items oi ON i.item_id = oi.item_id GROUP BY i.item_id, i.item_desc ORDER BY value DESC;
+* Some items are more important to be sure we have enough in inventory. I want to see what items have the greatest value, how many are ordered, how many times they are ordered, and what is the value of that item.
+> `SELECT i.item_id, i.item_desc, SUM(oi.item_quant) AS units_ordered, SUM(oi.value) AS value, COUNT(oi.order_id) AS times_ordered FROM normalization_activity.items i JOIN normalization_activity.order_items oi ON i.item_id = oi.item_id GROUP BY i.item_id, i.item_desc ORDER BY value DESC;`
 
 ![9](https://github.com/user-attachments/assets/b909eb55-6f22-4979-9f67-1e4a74f51226)
