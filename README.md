@@ -8,7 +8,7 @@ Practice run queries
 # Join tables practice
 * Run normalization_sample.sql and create queries to join table from a list of item below:
 * order_id int, order_date date, cust_id int, cust_name text, cust_state text, item_id text, item_desc text, item_quant text, item_price text, value text, primary key(order_id)
-SELECT o.order_id, o.order_date, c.cust_id,c.cust_name,i.item_id,i.item_desc,oi.item_quant,oi.price_paid, oi.value FROM normalization_activity.orders o JOIN normalization_activity.customers c ON o.cust_id = c.cust_id JOIN normalization_activity.order_items oi ON o.order_id = oi.order_id JOIN normalization_activity.items i ON oi.item_id = i.item_id ORDER BY o.order_date,c.cust_id,o.order_id;
+`SELECT o.order_id, o.order_date, c.cust_id,c.cust_name,i.item_id,i.item_desc,oi.item_quant,oi.price_paid, oi.value FROM normalization_activity.orders o JOIN normalization_activity.customers c ON o.cust_id = c.cust_id JOIN normalization_activity.order_items oi ON o.order_id = oi.order_id JOIN normalization_activity.items i ON oi.item_id = i.item_id ORDER BY o.order_date,c.cust_id,o.order_id;`
 ![Image](https://github.com/user-attachments/assets/6dea619c-2b45-4e52-8d34-2dba1ea5e466)
 
 I want to contact our most important customers and thank them for their business and ask how we can strengthen our relationship. I want to see a list of each customer and how much each customer has ordered.
