@@ -6,9 +6,8 @@ Practice run queries
 ![Image](https://github.com/user-attachments/assets/015eef57-921e-45b4-9101-b8034a7b41ac)
 
 # Join tables practice
-* Run queries to join table from a list of item below:
+* Run normalization_sample.sql and create queries to join table from a list of item below:
 * order_id int, order_date date, cust_id int, cust_name text, cust_state text, item_id text, item_desc text, item_quant text, item_price text, value text, primary key(order_id)
-* normalization_sample.sql
 SELECT o.order_id, o.order_date, c.cust_id,c.cust_name,i.item_id,i.item_desc,oi.item_quant,oi.price_paid, oi.value FROM normalization_activity.orders o JOIN normalization_activity.customers c ON o.cust_id = c.cust_id JOIN normalization_activity.order_items oi ON o.order_id = oi.order_id JOIN normalization_activity.items i ON oi.item_id = i.item_id ORDER BY o.order_date,c.cust_id,o.order_id;
 ![Image](https://github.com/user-attachments/assets/6dea619c-2b45-4e52-8d34-2dba1ea5e466)
 
